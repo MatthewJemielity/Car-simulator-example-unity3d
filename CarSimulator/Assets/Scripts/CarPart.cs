@@ -315,8 +315,10 @@ public class CarPart : MonoBehaviour
         {
             case ControlType.Type.Assembly:
 
-                if (CanAssembly())
-                Inventory.instance.ShowInventory(this);
+                if (CanAssembly() && !Inventory.instance.InventoryPanel.activeSelf)
+                {
+                    Inventory.instance.ShowInventory(this);
+                }
                 break;
 
 
